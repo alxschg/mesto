@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Место</title>
+
+    <link rel="stylesheet" href="./pages/index.css">
+
+</head>
+<body class="page">
+    <header class="header">
+        <img class="header__logo" src="./images/logo.svg" alt="Логотип Место">
+    </header>
+
+    <main class="content">
+        <section class="profile">
+            <div class="profile__card">
+                <img class="profile__avatar" src="./images/ava.jpg" alt="Аватарка">
+                <div class="profile__info">
+                    <h2 class="profile__title">Алексей Щеглов</h2>
+                    <button type="button" class="profile__edit-button"></button>
+                    <p class="profile__description">Гений, миллиардер, плейбой...</p>
+                </div>
+            </div>
+            <button type="button" class="profile__add-button"></button>
+        </section>
+
+        <section class="elements">
+            <ul class="elements__list">
+                <li class="element">
+                    <img class="element__image" src="./images/Gora.jpg" alt="Гора Эльбрус">
+                    <div class="element__group">
+                        <h2 class="element__title">Роспись от великого меня</h2>
+                        <button type="button" class="element__like"></button>
+                    </div>
+                </li>
+
+                <li class="element">
+                    <img class="element__image" src="./images/Gora.jpg" alt="Гора Эльбрус">
+                    <div class="element__group">
+                        <h2 class="element__title">Роспись</h2>
+                        <button type="button" class="element__like"></button>
+                    </div>
+                </li>
+
+                <li class="element">
+                    <img class="element__image" src="./images/Gora.jpg" alt="Гора Эльбрус">
+                    <div class="element__group">
+                        <h2 class="element__title">Роспись</h2>
+                        <button type="button" class="element__like"></button>
+                    </div>
+                </li>
+
+                <li class="element">
+                    <img class="element__image" src="./images/Gora.jpg" alt="Гора Эльбрус">
+                    <div class="element__group">
+                        <h2 class="element__title">Роспись</h2>
+                        <button type="button" class="element__like"></button>
+                    </div>
+                </li>
+
+                <li class="element">
+                    <img class="element__image" src="./images/Gora.jpg" alt="Гора Эльбрус">
+                    <div class="element__group">
+                        <h2 class="element__title">Роспись</h2>
+                        <button type="button" class="element__like"></button>
+                    </div>
+                </li>
+
+                <li class="element">
+                    <img class="element__image" src="./images/Gora.jpg" alt="Гора Эльбрус">
+                    <div class="element__group">
+                        <h2 class="element__title">Роспись</h2>
+                        <button type="button" class="element__like"></button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <h2 class="footer__project">© 2020 Mesto Russia</h2>
+    </footer>
+
+    <div class="popup">
+        <form class="popup__form">
+            <fieldset class="popup__edit">
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <input id="nameInput" name="Name" placeholder="Введите ваше имя" required class="popup__input">
+                <input id="jobInput" name="AboutName" placeholder="Расскажите о себе" required class="popup__input">
+                <button type="submit" class="popup__button-save"></button>
+                <button type="button" class="popup__close"></button>
+            </fieldset>
+        </form>
+    </div>
+
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
