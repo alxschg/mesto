@@ -5,6 +5,9 @@
     row-gap: 15px;
     color: white;
     align-self: center;
+    grid-template-areas:
+    "title button"
+    "description description";
 }
 
 @media screen and (max-width: 768px) {
