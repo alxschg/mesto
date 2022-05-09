@@ -10,10 +10,10 @@
     background-repeat: no-repeat;
     background-size: contain;
     border: none;
-    transition: opacity 0.5s linear;
+    transition: opacity 0.2s linear;
 }
 
-.popup__button-save:hover{
+.popup__close:hover{
     opacity: 0.6;
 }
 

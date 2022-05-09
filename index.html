@@ -20,11 +20,11 @@
                 <img class="profile__avatar" src="./images/ava.jpg" alt="Аватарка">
                 <div class="profile__info">
                     <h2 class="profile__title">Алексей Щеглов</h2>
-                    <button type="button" class="profile__edit-button"></button>
-                    <p class="profile__description">Гений, миллиардер, плейбой...</p>
+                    <button type="button" class="profile__edit-button" aria-label="editProfile"></button>
+                    <p class="profile__description">Гений, миллиардер, плейбой</p>
                 </div>
             </div>
-            <button type="button" class="profile__add-button"></button>
+            <button type="button" class="profile__add-button" aria-label="editAdd"></button>
         </section>
 
         <section class="elements">
@@ -33,7 +33,7 @@
                     <img class="element__image" src="./images/Gora.jpg" alt="Гора Эльбрус">
                     <div class="element__group">
                         <h2 class="element__title">Роспись от великого меня</h2>
-                        <button type="button" class="element__like"></button>
+                        <button type="button" class="element__like" aria-label="like"></button>
                     </div>
                 </li>
 
@@ -41,7 +41,7 @@
                     <img class="element__image" src="./images/Gora.jpg" alt="Гора Эльбрус">
                     <div class="element__group">
                         <h2 class="element__title">Роспись</h2>
-                        <button type="button" class="element__like"></button>
+                        <button type="button" class="element__like" aria-label="like"></button>
                     </div>
                 </li>
 
@@ -49,7 +49,7 @@
                     <img class="element__image" src="./images/Gora.jpg" alt="Гора Эльбрус">
                     <div class="element__group">
                         <h2 class="element__title">Роспись</h2>
-                        <button type="button" class="element__like"></button>
+                        <button type="button" class="element__like" aria-label="like"></button>
                     </div>
                 </li>
 
@@ -57,7 +57,7 @@
                     <img class="element__image" src="./images/Gora.jpg" alt="Гора Эльбрус">
                     <div class="element__group">
                         <h2 class="element__title">Роспись</h2>
-                        <button type="button" class="element__like"></button>
+                        <button type="button" class="element__like" aria-label="like"></button>
                     </div>
                 </li>
 
@@ -65,7 +65,7 @@
                     <img class="element__image" src="./images/Gora.jpg" alt="Гора Эльбрус">
                     <div class="element__group">
                         <h2 class="element__title">Роспись</h2>
-                        <button type="button" class="element__like"></button>
+                        <button type="button" class="element__like" aria-label="like"></button>
                     </div>
                 </li>
 
@@ -73,7 +73,7 @@
                     <img class="element__image" src="./images/Gora.jpg" alt="Гора Эльбрус">
                     <div class="element__group">
                         <h2 class="element__title">Роспись</h2>
-                        <button type="button" class="element__like"></button>
+                        <button type="button" class="element__like" aria-label="like"></button>
                     </div>
                 </li>
             </ul>
@@ -85,15 +85,15 @@
     </footer>
 
     <div class="popup">
-        <form class="popup__form">
-            <fieldset class="popup__edit">
-                <h2 class="popup__title">Редактировать профиль</h2>
-                <input id="nameInput" name="Name" placeholder="Введите ваше имя" required class="popup__input">
-                <input id="jobInput" name="AboutName" placeholder="Расскажите о себе" required class="popup__input">
-                <button type="submit" class="popup__button-save"></button>
-                <button type="button" class="popup__close"></button>
-            </fieldset>
-        </form>
+        <div class="popup__form">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <button type="button" class="popup__close" aria-label="Close"></button>
+            <form name="edit-profile">
+                <input name="Name" placeholder="Введите ваше имя" required class="popup__input popup__input_name">
+                <input name="AboutName" placeholder="Расскажите о себе" required class="popup__input popup__input_job">
+                <button type="submit" class="popup__button-save" aria-label="Save"></button>
+            </form>
+        </div>
     </div>
 
     <script src="./scripts/script.js"></script>

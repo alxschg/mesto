@@ -2,7 +2,6 @@
     max-width: 880px;
     width: calc(100% - 400px);
     margin: 66px auto 0;
-    padding: 0;
     padding-bottom: 60px;
 }
 
@@ -15,5 +14,12 @@
 @media screen and (max-width: 950px) {
     .footer{
     width: calc(100% - 40px);
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .footer{
+        margin-top: 48px;
+        padding-bottom: 36px;
     }
 }
