@@ -29,53 +29,6 @@
 
         <section class="elements">
             <ul class="elements__list">
-                <li class="element">
-                    <img class="element__image" src="./images/Gora.jpg" alt="Гора Эльбрус">
-                    <div class="element__group">
-                        <h2 class="element__title">Роспись от великого меня</h2>
-                        <button type="button" class="element__like" aria-label="like"></button>
-                    </div>
-                </li>
-
-                <li class="element">
-                    <img class="element__image" src="./images/Gora.jpg" alt="Гора Эльбрус">
-                    <div class="element__group">
-                        <h2 class="element__title">Роспись</h2>
-                        <button type="button" class="element__like" aria-label="like"></button>
-                    </div>
-                </li>
-
-                <li class="element">
-                    <img class="element__image" src="./images/Gora.jpg" alt="Гора Эльбрус">
-                    <div class="element__group">
-                        <h2 class="element__title">Роспись</h2>
-                        <button type="button" class="element__like" aria-label="like"></button>
-                    </div>
-                </li>
-
-                <li class="element">
-                    <img class="element__image" src="./images/Gora.jpg" alt="Гора Эльбрус">
-                    <div class="element__group">
-                        <h2 class="element__title">Роспись</h2>
-                        <button type="button" class="element__like" aria-label="like"></button>
-                    </div>
-                </li>
-
-                <li class="element">
-                    <img class="element__image" src="./images/Gora.jpg" alt="Гора Эльбрус">
-                    <div class="element__group">
-                        <h2 class="element__title">Роспись</h2>
-                        <button type="button" class="element__like" aria-label="like"></button>
-                    </div>
-                </li>
-
-                <li class="element">
-                    <img class="element__image" src="./images/Gora.jpg" alt="Гора Эльбрус">
-                    <div class="element__group">
-                        <h2 class="element__title">Роспись</h2>
-                        <button type="button" class="element__like" aria-label="like"></button>
-                    </div>
-                </li>
             </ul>
         </section>
     </main>
@@ -84,7 +37,7 @@
         <p class="footer__project">© 2020 Mesto Russia</p>
     </footer>
 
-    <div class="popup">
+    <div id="EditProfile" class="popup">
         <div class="popup__form">
             <h2 class="popup__title">Редактировать профиль</h2>
             <button type="button" class="popup__close" aria-label="Close"></button>
@@ -96,6 +49,38 @@
         </div>
     </div>
 
+    <div id="CreateCard" class="popup">
+        <div class="popup__form">
+            <h2 class="popup__title">Новое место</h2>
+            <button type="button" class="popup__close" aria-label="Close"></button>
+            <form name="edit-profile">
+                <input name="Name" placeholder="Название" required class="popup__input popup__input_type_name">
+                <input name="AboutName" placeholder="Ссылка на картинку" required class="popup__input popup__input_type_job">
+                <button type="submit" class="popup__button-save" aria-label="Save">Создать</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="imageCard" class="popup popup_overlay">
+        <div class="popup__image-container">
+            <figure class="popup__image-box">
+                <img class="popup__image" src="#" alt="Фото карточки">
+                <figcaption class="popup__image-text"></figcaption>
+            </figure>
+            <button type="button" class="popup__close" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <template id="element-card">
+        <li class="element">
+            <img class="element__image" src="#" alt="Фото карточки">
+            <div class="element__group">
+                <h2 class="element__title"></h2>
+                <button type="button" class="element__like" aria-label="like"></button>
+            </div>
+            <button type="button" class="element__delete" aria-label="delete"></button>
+        </li>
+    </template>
     <script src="./scripts/script.js"></script>
 </body>
 </html>
