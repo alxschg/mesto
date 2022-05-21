@@ -38,8 +38,7 @@ const cardplace = document.querySelector('.elements__list');
 //template
 const cardTemplate = document.querySelector('#element-card').content;
 
-//Форма card-popup
-const editForm = popupCard.querySelector("#card-reset");
+const EditForm = document.forms.editcard;
 
 
 //Задаем значение инпутов в edit-popup
@@ -74,7 +73,7 @@ function cardFormSubmitHandler (evt) {
     const popupSubmitCard = createCard(item);
     addCard(popupSubmitCard);
     popupClose(popupCard);
-    editForm.reset();
+    EditForm.reset();
 }
 
 
