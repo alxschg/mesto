@@ -41,16 +41,14 @@ const cardTemplate = document.querySelector('#element-card').content;
 const editForm = document.forms.editcard;
 
 
-//Задаем значение инпутов в edit-popup
-
-
-
 //Функция открытия и закрытия card-popup
 function popupOpen(popup) {
     popup.classList.add('popup_is-opened');
+    document.addEventListener('keyup', CloseEsc);
 }
 function popupClose(popup) {
     popup.classList.remove('popup_is-opened');
+    document.removeEventListener('keyup', CloseEsc);
 }
 
 
@@ -105,6 +103,15 @@ function addCard(CardElement){
     cardplace.prepend(CardElement);
 }
 
+//Закрытие попапа esc
+function CloseEsc (evt){
+    evt.preventDefault();
+    const popupIsOpened = document.querySelector('.popup_is-opened');
+    if (evt.key === 'Escape') {
+      popupClose(popupIsOpened);
+};
+}
+
 //Добоавления массива в разметку
 initialCards.forEach(function(item){
     const cardAppend = createCard(item);
@@ -118,13 +125,28 @@ editProfileButton.addEventListener('click', function(){
     jobEdit.value = profileDescription.textContent;
 });
 
+
+//Закрытие попапов
+popupProfile.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close_edit')) {
+        popupClose(popupProfile);
+    }
+  });
+  popupCard.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close_card')) {
+        popupClose(popupCard);
+    }
+  });
+  popupImage.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close_image')) {
+        popupClose(popupImage);
+    }
+  })
+
+  
+
 //Открытие попапа card
 cardAddButton.addEventListener('click', function(){popupOpen(popupCard);});
-
-//Кнопки закрытия
-popupProfileCloseButton.addEventListener('click', function(){popupClose(popupProfile);});
-popupCardCloseButton.addEventListener('click', function(){popupClose(popupCard);});
-popupImageCloseButton.addEventListener('click', function(){popupClose(popupImage);});
 
 //submit
 profilePopupForm.addEventListener('submit', editFormSubmitHandler);
