@@ -105,7 +105,6 @@ function addCard(CardElement){
 
 //Закрытие попапа esc
 function CloseEsc (evt){
-
     const popupIsOpened = document.querySelector('.popup_is-opened');
     if (evt.key === 'Escape') {
       popupClose(popupIsOpened);
