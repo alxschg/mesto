@@ -42,8 +42,7 @@ const editForm = document.forms.editcard;
 
 
 //Задаем значение инпутов в edit-popup
-nameEdit.value = profileTitle.textContent;
-jobEdit.value = profileDescription.textContent;
+
 
 
 //Функция открытия и закрытия card-popup
@@ -115,6 +114,8 @@ initialCards.forEach(function(item){
 //Открытие попапа edit-profile
 editProfileButton.addEventListener('click', function(){
     popupOpen(popupProfile);
+    nameEdit.value = profileTitle.textContent;
+    jobEdit.value = profileDescription.textContent;
 });
 
 //Открытие попапа card
