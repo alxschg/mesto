@@ -13,7 +13,7 @@ const popupImage = document.querySelector('#image-card');
 const popupProfileCloseButton = popupProfile.querySelector('.popup__close');
 const popupCardCloseButton = popupCard.querySelector('.popup__close');
 const popupImageCloseButton = popupImage.querySelector('.popup__close');
-const popupSubmitButton = popupCard.querySelector('.popup__button-save');
+const popupCardSubmitButton = popupCard.querySelector('.popup__button-save');
 
 //Формы попапов
 const profilePopupForm = popupProfile.querySelector('.popup__form');
@@ -46,7 +46,6 @@ const formEdit = document.forms.editcard;
 const openPopup = (popup) => {
     popup.classList.add('popup_is-opened');
     document.addEventListener('keyup', closeEsc);
-    popupSubmitButton.setAttribute('disabled', 'disabled');
 }
 function closePopup(popup) {
     popup.classList.remove('popup_is-opened');
@@ -73,6 +72,7 @@ function submitCardFormHandler (evt) {
     addCard(popupSubmitCard);
     closePopup(popupCard);
     formEdit.reset();
+    popupCardSubmitButton.setAttribute('disabled', 'disabled');
 }
 
 
@@ -146,8 +146,7 @@ profileEditButton.addEventListener('click', function(){
     if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close_image')) {
         closePopup(popupImage);
     }
-  })
-
+  });
   
 
 //Открытие попапа card
