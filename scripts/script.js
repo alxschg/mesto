@@ -3,26 +3,8 @@ import {profileEditButton, cardAddButton, popupProfile, popupCard, popupImage, p
     linkCard, cardplace, formEdit, initialCards, validationConfig} from "./const.js";
 
 import { Card } from "./cards.js";
-
 import { FormValidator } from "./validator.js";
-
-//Функция открытия и закрытия popup
-export const openPopup = (popup) => {
-    popup.classList.add('popup_is-opened');
-    document.addEventListener('keyup', closeEsc);
-}
-function closePopup(popup) {
-    popup.classList.remove('popup_is-opened');
-    document.removeEventListener('keyup', closeEsc);
-}
-
-//Закрытие попапа esc
-function closeEsc (evt){
-    if (evt.key === 'Escape') {
-        const popupIsOpened = document.querySelector('.popup_is-opened');
-        closePopup(popupIsOpened);
-};
-}
+import { openPopup, closePopup } from "./utils.js";
 
 //submit 
 
