@@ -2,8 +2,8 @@ import {profileEditButton, cardAddButton, popupProfile, popupCard, popupImage, p
     cardPopupForm, nameEdit, jobEdit, profileTitle, profileDescription, nameCard,
     linkCard, cardplace, formEdit, initialCards, validationConfig} from "./const.js";
 
-import { Card } from "./cards.js";
-import { FormValidator } from "./validator.js";
+import { Card } from "./Card.js";
+import { FormValidator } from "./FormValidator.js";
 import { openPopup, closePopup } from "./utils.js";
 
 //submit 
@@ -15,6 +15,13 @@ function submitEditFormHandler (evt) {
     closePopup(popupProfile);
 }
 
+function createExemplarCard(item){
+    const card = new Card(item, "#element-card");
+    const popupSubmitCard = card.createCard();
+
+    return popupSubmitCard;
+}
+
 function submitCardFormHandler (evt) {
     evt.preventDefault();
     const item = 
@@ -22,13 +29,10 @@ function submitCardFormHandler (evt) {
             name: nameCard.value,
             link: linkCard.value
         }
-    ;
-    const card = new Card(item, "#element-card");
-    const popupSubmitCard = card.createCard();
-    addCard(popupSubmitCard);
+    addCard(createExemplarCard(item));
     closePopup(popupCard);
     formEdit.reset();
-    popupCardSubmitButton.setAttribute('disabled', 'disabled');
+    formCardValidator.toggleButtonState();
 }
 
 //Добавление card в разметку
@@ -37,9 +41,7 @@ function addCard(cardAppend){
 }
 //Добоавления массива в разметку
 initialCards.forEach((item) => {
-    const card = new Card(item, "#element-card");
-    const cardExample = card.createCard();
-    addCard(cardExample); 
+    addCard(createExemplarCard(item)); 
 });
 
 //Открытие попапа edit-profile
