@@ -1,23 +1,23 @@
 import '../pages/index.css';
 
 import {profileEditButton, cardAddButton, profilePopupForm,
-    cardPopupForm, nameEdit, jobEdit, cardplace, initialCards, validationConfig} from "./const.js";
+    cardPopupForm, nameEdit, jobEdit, cardplace, initialCards, validationConfig} from "./utils/const.js";
 
-import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
-import Section from "./Section.js";
-import PopupWithImage from "./PopupWithImage.js";
-import PopupWithForm from "./PopupWithForm.js";
-import UserInfo from "./UserInfo.js";
+import Card from "./components/Card.js";
+import FormValidator from "./components/FormValidator.js";
+import Section from "./components/Section.js";
+import PopupWithImage from "./components/PopupWithImage.js";
+import PopupWithForm from "./components/PopupWithForm.js";
+import UserInfo from "./components/UserInfo.js";
 
 //submit 
-function submitEditFormHandler (data) {
+const submitEditFormHandler = (data) => {
     const {name, aboutName} = data;
     userInfo.setUserInfo(name, aboutName);
     editProfilePopup.close();
 }
 
-function submitCardFormHandler (data) {
+const submitCardFormHandler = (data) => {
     const item = {
         name: data.imageName,
         link: data.imageLink
