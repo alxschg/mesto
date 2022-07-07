@@ -1,11 +1,9 @@
-import { popupImageLink,  popupImageText, popupImage} from "./const.js";
-import { openPopup} from "./utils.js";
-
-export class Card {
-  constructor(data, cardSelector) {
+export default class Card {
+  constructor(data, cardSelector, handleImageClick) {
     this._name = data.name;
     this._link = data.link;
     this._cardSelector = cardSelector;
+    this._handleImageClick = handleImageClick;
   }
 
   _getTemplate() {
@@ -31,14 +29,6 @@ export class Card {
     this._element.querySelector('.element__title').textContent = this._name;
 
     return this._element;
-  }
-  
-  //Для открытия попапа
-  _handleOpenPopup() {
-    popupImageLink.src = this._link;
-    popupImageLink.alt = this._name;
-    popupImageText.textContent =this._name;
-    openPopup(popupImage);
   }
 
   //Для изменения лайка
@@ -67,7 +57,7 @@ export class Card {
 
     //Слушатель открытия попапа
     this._element.querySelector('.element__image').addEventListener('click', () => {
-        this._handleOpenPopup();
+        this._handleImageClick();
      });
   }
   };
