@@ -1,6 +1,7 @@
 export default class FormValidator{
   constructor(config, form){
     this._form = form;
+    this._close = this._form.querySelector('.popup__close');
     this._formSelector = config.formSelector;
     this._inputError = config.inputError;
     this._inputErrorActive = config.inputErrorActive;
@@ -54,6 +55,12 @@ export default class FormValidator{
         this._checkInputValidity(inputElement);
         this.toggleButtonState();
       });
+    });
+    this._close.addEventListener('click', () => 
+    {
+      this._inputList.forEach((inputElement) => {
+        this._hideInputError(inputElement);
+      })
     });
   };
 

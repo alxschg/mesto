@@ -38,6 +38,15 @@
         formFieldset : '.popup__fieldset'
     };
 
+    const selectorConfig = {
+      profileTitle: '.profile__title',
+      profileDescription: '.profile__description',
+      elementCard: '#element-card',
+      imageCard: '#image-card',
+      cardCreate: '#create-card',
+      profileEdit: '#edit-profile'
+    }
+
     //Кнопки открытия попапов
     const profileEditButton = document.querySelector('.profile__edit-button');
     const cardAddButton = document.querySelector('.profile__add-button');
@@ -59,5 +68,6 @@
 
     export {
       profileEditButton, cardAddButton, profilePopupForm,
-      cardPopupForm, nameEdit, jobEdit, cardplace, initialCards, validationConfig
+      cardPopupForm, nameEdit, jobEdit, cardplace, initialCards, validationConfig,
+      selectorConfig
     };
