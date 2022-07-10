@@ -7,14 +7,6 @@ export default class PopupWithConfirmation extends Popup{
         this._confirmButton = this._popup.querySelector('.popup__button-save');
     }
   
-    renderLoading(isLoading) {
-      if(isLoading) {
-        this._confirmButton.textContent = 'Удаление...';
-      } else {
-        this._confirmButton.textContent = 'Да';
-      }
-    }
-  
     open(card, cardId) {
         this._card = card;
         this._cardId = cardId;
