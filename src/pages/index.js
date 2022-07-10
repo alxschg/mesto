@@ -55,8 +55,33 @@ avatarUpdateButton.addEventListener('click', function(){popupAvatarUpdate.open()
 //Функция создания карточек
 const createInstanceCard = (item) =>{
     const card = new Card(item, selectorConfig.elementCard, userId, api,
-        () => {popupImage.open(item.name, item.link);},
-        () => {popupDeleteCard.open(cardSubmit, item._id);});
+        () => {popupImage.open(item);},
+        () => {popupDeleteCard.open();
+            popupDeleteCard.submitCallback(() => {
+                api.deleteCard(item._id)
+                  .then(() => {
+                    popupDeleteCard.close();
+                    card.deleteCard();
+                  })
+                  .catch((err) => {
+                    console.log(err);
+                  });
+              });},
+        () => {api.putLike(item._id)
+        .then((res) => {
+            card.handleLikeCard(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });},
+        () => {api.deleteLike(item._id)
+            .then((res) => {
+                card.handleLikeCard(res);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        });
     const cardSubmit = card.createCard();
     return cardSubmit;
 }
@@ -113,7 +138,7 @@ const submitAvatarFormHandler = (data) => {
 
 
 //Добавление card в разметку
-const sectionCard = new Section({renderer: createInstanceCard}, cardplace);
+const sectionCard = new Section(createInstanceCard, cardplace);
 //Добавление информации о пользователе
 const userInfo = new UserInfo( selectorConfig.profileTitle, selectorConfig.profileDescription, selectorConfig.avatar);
 //Создание попапа редактирования профиля
@@ -126,30 +151,13 @@ popupAddCard.setEventListeners();
 const popupAvatarUpdate = new PopupWithForm(selectorConfig.avatarUpdate, submitAvatarFormHandler);
 popupAvatarUpdate.setEventListeners();
 //Создаем попап для удаления карточки
-const popupDeleteCard = new PopupWithConfirmation(selectorConfig.cardDelete, submitDeleteCardFormHandler);
+const popupDeleteCard = new PopupWithConfirmation(selectorConfig.cardDelete);
 popupDeleteCard.setEventListeners();
 //Создания попапа для открытия изображений с карточек
 const popupImage = new PopupWithImage(selectorConfig.imageCard);
 popupImage.setEventListeners();
 
 
-
-
-
-
-//submit 
-function submitDeleteCardFormHandler(card, idCard){
-    api.deleteCard(idCard)
-    .then(() => {
-        card.remove();
-        card = null;
-      })
-    .catch((err) => {
-        console.log(err);
-      });
-    popupDeleteCard.close();
-    
-}
 
 
 
@@ -162,5 +170,3 @@ formCardValidator.enableValidation();
 
 const formAvatarValidator = new FormValidator(validationConfig, avatarPopupForm);
 formAvatarValidator.enableValidation();
-
-
