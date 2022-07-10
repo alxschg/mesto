@@ -1,33 +1,3 @@
-   //массив для карточек
-   
-   const initialCards = [
-    {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-      name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-      name: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-    ]; 
-
-
     //валидатор
     const validationConfig = {
         formSelector : '.form',
@@ -44,20 +14,28 @@
       elementCard: '#element-card',
       imageCard: '#image-card',
       cardCreate: '#create-card',
-      profileEdit: '#edit-profile'
+      profileEdit: '#edit-profile',
+      avatarUpdate: '#avatar-popup',
+      avatar: '.profile__avatar',
+      cardDelete: '#delete-popup'
     }
 
     //Кнопки открытия попапов
     const profileEditButton = document.querySelector('.profile__edit-button');
     const cardAddButton = document.querySelector('.profile__add-button');
+    const avatarUpdateButton = document.querySelector('.profile__avatar-button');
+    const cardDeleteButton = document.querySelector('.element__delete');
+    
     
     //Попапы
     const popupProfile = document.querySelector('#edit-profile');
     const popupCard = document.querySelector('#create-card');
+    const popupAvatar = document.querySelector('#avatar-popup');
 
     //Формы попапов
     const profilePopupForm = popupProfile.querySelector('.popup__form');
     const cardPopupForm = popupCard.querySelector('.popup__form');
+    const avatarPopupForm = popupAvatar.querySelector('.popup__form');
 
     //Инпуты edit-popup
     const nameEdit = popupProfile.querySelector('.popup__input_type_name');
@@ -66,8 +44,10 @@
     //Место, куда будут вставляться card
     const cardplace = document.querySelector('.elements__list');
 
+    const avatar = document.querySelector('.profile__avatar');
+
     export {
       profileEditButton, cardAddButton, profilePopupForm,
-      cardPopupForm, nameEdit, jobEdit, cardplace, initialCards, validationConfig,
-      selectorConfig
+      cardPopupForm, nameEdit, jobEdit, cardplace, validationConfig,
+      selectorConfig, avatarUpdateButton, avatar, avatarPopupForm, cardDeleteButton
     };
