@@ -3,7 +3,7 @@ import '../pages/index.css';
 
 import {profileEditButton, cardAddButton, profilePopupForm, selectorConfig,
     cardPopupForm, nameEdit, jobEdit, cardplace, validationConfig,
-    avatarPopupForm, avatarUpdateButton, avatar} from "../scripts/utils/const.js";
+    avatarPopupForm, avatarUpdateButton} from "../scripts/utils/const.js";
 
 import Card from "../scripts/components/Card.js";
 import FormValidator from "../scripts/components/FormValidator.js";

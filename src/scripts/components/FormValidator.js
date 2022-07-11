@@ -62,7 +62,7 @@ export default class FormValidator{
         this._hideInputError(inputElement);
       })
     });
-  };
+  }
 
   enableValidation = () => {
     this._form.addEventListener('submit', function (evt)
